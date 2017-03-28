@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+<h1 data-th-text="${quizz.name}"></h1>
+
+
+<div>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div data-th-each="question, iter : ${quizz.questions}" role="tabpanel"
+             data-th-class="${iter.index==0} ?  'tab-pane active' : 'tab-pane'  ">
+            <h3 data-th-text="${question.text}" role="tab">Home</h3>
+            <input type="radio" data-th-name="${question.id}" data-th-text="${answer.text}"
+                   data-th-each="answer : ${question.answers}">
+            </input>
+
+
+        </div>
+
+
+        <div role="tabpanel" class="tab-pane" style="display: none;">
+            <h3 role="tab">FINISH</h3>
+            <div>
+                <input value="Finish" type="submit">
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/webjars/jquery/2.1.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+
+    $('.tab-pane').find(':radio').change(function () {
+        $(this).parent('.tab-pane').hide();
+        $(this).parent('.tab-pane').next().show();
+    });
+
+    //    $('#myTabs a').click(function (e) {
+    //        e.preventDefault()
+    //        $(this).tab('show')
+    //    })
+</script>
+</body>
+</html>
