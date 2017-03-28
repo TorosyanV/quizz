@@ -4,7 +4,7 @@ import info.fonis.data.entity.AnswerEntity;
 import info.fonis.data.repository.AnswerRepository;
 import info.fonis.data.repository.QuestionRepository;
 import info.fonis.service.dto.AnswerCreateDto;
-import info.fonis.web.AnswerDto;
+import info.fonis.service.dto.AnswerDto;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

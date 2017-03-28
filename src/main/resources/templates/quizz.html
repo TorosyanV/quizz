@@ -10,13 +10,15 @@
 <h1 data-th-text="${quizz.name}"></h1>
 
 
-<div>
+<form th:action="@{/quizz/finish}" method="post">
+
+    <input type="hidden" name="quizzId" th:value="${quizz.id}">
     <!-- Tab panes -->
     <div class="tab-content">
         <div data-th-each="question, iter : ${quizz.questions}" role="tabpanel"
              data-th-class="${iter.index==0} ?  'tab-pane active' : 'tab-pane'  ">
             <h3 data-th-text="${question.text}" role="tab">Home</h3>
-            <input type="radio" data-th-name="${question.id}" data-th-text="${answer.text}"
+            <input type="radio" data-th-value="${answer.id}" data-th-name="${question.id}" data-th-text="${answer.text}"
                    data-th-each="answer : ${question.answers}">
             </input>
 
@@ -33,7 +35,7 @@
         </div>
     </div>
 
-</div>
+</form>
 
 
 <script src="/webjars/jquery/2.1.0/jquery.min.js"></script>

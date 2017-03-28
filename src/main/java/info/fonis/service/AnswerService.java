@@ -1,7 +1,7 @@
 package info.fonis.service;
 
 import info.fonis.service.dto.AnswerCreateDto;
-import info.fonis.web.AnswerDto;
+import info.fonis.service.dto.AnswerDto;
 
 /**
  * Created by vazgent on 3/28/2017.

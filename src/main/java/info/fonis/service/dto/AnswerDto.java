@@ -1,4 +1,4 @@
-package info.fonis.web;
+package info.fonis.service.dto;
 
 /**
  * Created by vazgent on 3/28/2017.
